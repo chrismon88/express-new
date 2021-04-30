@@ -48,7 +48,7 @@ router.patch('/students/:id', function (req,res,next){
         })
         .catch(err =>{
             // if validation error, tell user bad request
-            if(err instanceof db.Sequlize.ValidationError){
+            if(err instanceof db.Sequelize.ValidationError){
                 let messages = err.errors.map(e=> e.message)
                 return res.status(400).json(messages)
             }else{
