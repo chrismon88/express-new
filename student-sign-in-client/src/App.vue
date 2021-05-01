@@ -36,11 +36,11 @@ export default {
   methods:{
     updateStudents(){
       this.$student_api.getAllStudents().then(students =>{
-        this.students =students
+        this.students = students
       }).catch(()=> alert('Unable to fetch student list'))
     },
     newStudentAdded(student){
-      this.$student_api.addStudent(student). then( () =>{
+      this.$student_api.addStudent(student).then( () =>{
         this.updateStudents()
       })
       .catch(err =>{
